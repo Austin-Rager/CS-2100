@@ -37,9 +37,9 @@ def game():
 
 def main():
 
-    n = eval(input("How many games of craps would you like to play? "))
-    w, l = sim_games(n)
-    percentage = float(w/l)
+    w, l = sim_games(1000000)
+    total = w + l
+    percentage = float(w/total)
 
     print("wins:", w,"losses:", l)
     print("Win/Loss ratio: ", percentage)
