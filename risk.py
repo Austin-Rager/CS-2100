@@ -1,5 +1,7 @@
 import random
 
+#with all rolls, it equates to PR(6,5) = 6^5
+
 def attackerDiceRoll():
     die1 = random.randint(1, 6)
     die2 = random.randint(1, 6)
@@ -40,14 +42,14 @@ def simulateBattles(num_battles):
     return total_attacker_losses, total_defender_losses
 
 def main():
-    num_battles = 10
+    num_battles = 1000000
     attacker_losses, defender_losses = simulateBattles(num_battles)
     print(f"After {num_battles} battles:")
     print(f"Total Attacker Losses: {attacker_losses}")
     print(f"Total Defender Losses: {defender_losses}")
 
     total_points = attacker_losses + defender_losses
-    attacker_points = defender_losses  # Attacker wins when defender loses!
+    attacker_points = defender_losses
     attacker_percentage = (attacker_points / total_points) * 100
 
     print(f"\nTotal points awarded: {total_points}")

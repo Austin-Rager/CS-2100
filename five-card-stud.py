@@ -1,5 +1,7 @@
 import random
 
+#Total Hands = C(52,5)
+
 def createDeck():
     deck = list(range(52))
     random.shuffle(deck)
